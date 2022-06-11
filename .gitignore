@@ -51,7 +51,7 @@ hs_err_pid*
 
 # Maven
 log/
-traget/
+target/
 /settings.xml
 !/settings.xml
 /manage-quotes/manage-quotes.iml
