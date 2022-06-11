@@ -1,6 +1,7 @@
 package com.learning.java.reactive;
 
 import java.util.concurrent.Callable;
+import java.util.function.Supplier;
 
 import com.learning.java.reactive.courseutil.Util;
 
@@ -14,12 +15,18 @@ public class Lec05MonoFromSupplier {
 		// Use just method only when you have data already
 		//Mono<String> mono = Mono.just(getName());
 		
-		Mono<String> mono = Mono.fromSupplier(() -> getName());
+		// Using fromSupplier method
+		//Mono<String> mono = Mono.fromSupplier(() -> getName());
+		
+		// Using Supplier
+		Supplier<String> stringSupplier = () -> getName();
+		Mono<String> mono = Mono.fromSupplier(stringSupplier);
 		
 		mono.subscribe(
 				Util.onNext()
 				);
 		
+		// Using callable
 		Callable<String> stringCallable = () -> getName();
 		Mono
 			.fromCallable(stringCallable)

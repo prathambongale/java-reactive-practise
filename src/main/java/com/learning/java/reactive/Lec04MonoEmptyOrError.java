@@ -9,17 +9,18 @@ public class Lec04MonoEmptyOrError {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		userRepository(30).subscribe(
+		userRepository(3).subscribe(
 					Util.onNext(),
 					Util.onError(),
 					Util.onComplete()
 				);
 	}
 	
+	// Publisher method
 	private static Mono<String> userRepository(int userId) {
 		
 		if (userId ==1) {
-			return Mono.just(Util.faker().name().firstName());
+			return Mono.just(Util.faker().name().firstName()); // Better ways available then just
 		} else if (userId == 2) {
 			return Mono.empty();
 		} else {

@@ -9,7 +9,7 @@ public class Lec09AssignmentDemo {
 		// TODO Auto-generated method stub
 
 		
-	    FileService .read("file03.txt") .subscribe( Util.onNext(), Util.onError(),Util.onComplete() );
+	    FileService.read("file03.txt").subscribe(Util.onNext(), Util.onError(), Util.onComplete() );
 	    
 		FileService.write("file03.txt", "This is file 3").subscribe(Util.onNext(), Util.onError(), Util.onComplete());
 		

@@ -9,6 +9,8 @@ public class Lec08MonoFromRunnable {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		// Creating Mono using Runnable
+		// Use - Sometimes there will be time consuming application and we will like to be notified once it is completed. That is when it will useful.
 		Runnable runnable = () -> System.out.println("");
 		
 		Mono

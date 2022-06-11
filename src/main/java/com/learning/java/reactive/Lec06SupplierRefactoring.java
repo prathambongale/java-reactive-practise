@@ -14,13 +14,20 @@ public class Lec06SupplierRefactoring {
 		getName()
 			.subscribeOn(Schedulers.boundedElastic())
 			.subscribe(Util.onNext());
+		
+		// Using block()
+		// can be used for testing purposes
+		/*
+		 * String name = getName() .subscribeOn(Schedulers.boundedElastic()) .block();
+		 * System.out.println(name);
+		 */
 		getName();
 		
-		Util.sleepSecond(4);
+		Util.sleepSecond(4); // used to block main Thread
 	}
 	
 	private static Mono<String> getName() {
-		System.out.println("enter getName method");
+		System.out.println("entered getName method");
 		return Mono.fromSupplier(()-> {
 					System.out.println("Genetrating name..");
 					Util.sleepSecond(3);
