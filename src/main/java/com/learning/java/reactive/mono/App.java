@@ -1,4 +1,4 @@
-package com.learning.java.reactive;
+package com.learning.java.reactive.mono;
 
 import java.util.stream.Stream;
 
